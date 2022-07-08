@@ -64,7 +64,7 @@
 #define Y_DIAG_PIN                          PE12  // Y-
 #define Z_DIAG_PIN                          PG8   // Z-
 #define E0_DIAG_PIN                         PE15  // E0
-#define E1_DIAG_PIN                         PE10  // E1
+#define Z2_DIAG_PIN                         PE10  // Z2
 #define E2_DIAG_PIN                         PG5   // E2
 
 //
@@ -85,13 +85,13 @@
 #ifdef Y_STALL_SENSITIVITY
   #define Y_STOP_PIN                  Y_DIAG_PIN
   #if Y_HOME_TO_MIN
-    #define Y_MAX_PIN                       PE10  // E1
+    #define Y_MAX_PIN                       PE10  // Z2
   #else
-    #define Y_MIN_PIN                       PE10  // E1
+    #define Y_MIN_PIN                       PE10  // Z2
   #endif
 #else
   #define Y_MIN_PIN                         PE12  // Y-
-  #define Y_MAX_PIN                         PE10  // E1
+  #define Y_MAX_PIN                         PE10  // Z2
 #endif
 
 #ifdef Z_STALL_SENSITIVITY
@@ -157,11 +157,11 @@
   #define E0_CS_PIN                         PB3
 #endif
 
-#define E1_STEP_PIN                         PD15
-#define E1_DIR_PIN                          PE7
-#define E1_ENABLE_PIN                       PA3
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PG15
+#define Z2_STEP_PIN                         PD15
+#define Z2_DIR_PIN                          PE7
+#define Z2_ENABLE_PIN                       PA3
+#ifndef Z2_CS_PIN
+  #define Z2_CS_PIN                         PG15
 #endif
 
 #define E2_STEP_PIN                         PD13
@@ -200,7 +200,7 @@
   //#define Z_HARDWARE_SERIAL  Serial1
   //#define Z2_HARDWARE_SERIAL Serial1
   //#define E0_HARDWARE_SERIAL Serial1
-  //#define E1_HARDWARE_SERIAL Serial1
+  //#define Z2_HARDWARE_SERIAL Serial1
   //#define E2_HARDWARE_SERIAL Serial1
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
@@ -217,8 +217,8 @@
   #define E0_SERIAL_TX_PIN                  PD4
   #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
-  #define E1_SERIAL_TX_PIN                  PD1
-  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  #define Z2_SERIAL_TX_PIN                  PD1
+  #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
   #define E2_SERIAL_TX_PIN                  PD6
   #define E2_SERIAL_RX_PIN      E2_SERIAL_TX_PIN
@@ -239,7 +239,7 @@
 #if TEMP_SENSOR_1_IS_AD8495 || TEMP_SENSOR_1 == 20
   #define TEMP_1_PIN                        PF9
 #else
-  #define TEMP_1_PIN                        PF5   // T2 <-> E1
+  #define TEMP_1_PIN                        PF5   // T2 <-> Z2
 #endif
 #if TEMP_SENSOR_2_IS_AD8495 || TEMP_SENSOR_2 == 20
   #define TEMP_2_PIN                        PF10
